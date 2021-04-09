@@ -33,9 +33,15 @@ body {
     background-color: hotpink;
 }
 
-.search-box {
+.left-search-box {
     /*debug*/
     background-color: deepskyblue;
+}
+
+.left-user-box {
+    /*debug*/
+    background-color: green;
+
 }
 
 
