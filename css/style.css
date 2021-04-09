@@ -85,21 +85,25 @@ body {
     justify-content: center;
     align-items: center;
     height: 40px;
-    background: #f8f8f8;
+    background-color: #f6f6f6;
     padding: 25px;
     /*debug*/
     /*background-color: deepskyblue;*/
 }
 
 .left-search-box .input-box {
-    background: white;
-    border-radius: 20px;
+    background-color: white;
+    border-radius: 25px;
     padding: 5px 15px;
     width: 100%;
     text-align: left;
     font-size: 10px;
     /*debug*/
     /*background-color: deepskyblue;*/
+}
+.left-search-box .input-box i {
+    padding-right: 10px;
+
 }
 
 .search-input {
