@@ -77,6 +77,7 @@ body {
 
 .left-top .box-icon-left-app .icon, .box-icon-right-app .icon {
     margin: 0 10px;
+    color: #50585d;
 }
 
 /* left side - SEARCH */
@@ -229,9 +230,24 @@ body {
     /*background-color: cornflowerblue;*/
 }
 
-.main-container-right .right-input-message .chat-box {
-    width: 100%;
+.right-container .right-message-box .chat-box {
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.right-container .right-message-box .chat-box .search-input {
+    background: #fff;
+    border-radius: 20px;
+    border: none;
+    padding:10px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.right-container .right-message-box .chat-box i {
+    font-size: 20px;
+    color: #50585d;
+    margin: 0 15px;
 }
