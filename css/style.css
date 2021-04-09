@@ -24,43 +24,57 @@ body {
 }
 
 .left-container {
+    width: 25%;
+    min-width: 350px;
+    height: 100%;
+    border-right: 1px solid darkgrey;
     /*debug*/
-    background-color: greenyellow;
+    /*background-color: greenyellow;*/
 }
 
 .left-top {
     /*debug*/
-    background-color: hotpink;
+    /*background-color: hotpink;*/
 }
 
 .left-search-box {
     /*debug*/
-    background-color: deepskyblue;
+    /*background-color: deepskyblue;*/
 }
 
 .left-user-box {
     /*debug*/
-    background-color: green;
-
+    /*background-color: green;*/
 }
 
 
 /* RIGHT SIDE */
 
+.right-container {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+    background-image: url("../img/bg-boolzapp-1.jpg");
+    background-repeat: repeat;
+    background-size: 300px;
+    /*debug*/
+    /*background-color: red;*/
+}
+
 .right-top {
     /*debug*/
-    background-color: red;
+   /* background-color: red;*/
 
 }
 
 .right-chat-area {
     /*debug*/
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
 
 }
 
 .right-message-box {
     /*debug*/
-    background-color: cornflowerblue;
+    /*background-color: cornflowerblue;*/
 
 }
