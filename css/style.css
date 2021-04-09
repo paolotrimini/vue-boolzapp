@@ -12,8 +12,6 @@
     background-color: white;
 }
 
-    /* LEFT SIDE */
-
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -21,8 +19,10 @@ body {
     width: 100vw;
     font-size: 16px;
     /*debug*/
-    background-color: orange;
+    /*background-color: orange;*/
 }
+
+/* LEFT SIDE */
 
 .left-container {
     width: 25%;
@@ -47,38 +47,39 @@ body {
     border-radius: 50%;
 }
 
-.left-top .box-icon-left {
+.left-top .box-icon-left-mac {
     display: flex;
     align-items: center;
     margin-left: 15px;
 }
 
-.left-top .box-icon-left .icon {
+.left-top .box-icon-left-mac .icon {
     margin: 0 4px;
     font-size: 12px;
 }
 
-.left-top .box-icon-left .icon:first-child {
+.left-top .box-icon-left-mac .icon:first-child {
     color: lightcoral;
 }
 
-.left-top .box-icon-left .icon:nth-child(2) {
+.left-top .box-icon-left-mac .icon:nth-child(2) {
     color: goldenrod;
 }
-.left-top .box-icon-left .icon:last-child {
+.left-top .box-icon-left-mac .icon:last-child {
     color: limegreen;
 }
 
-.left-top .box-icon-right {
+.left-top .box-icon-left-app, .box-icon-right-app {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
 
-
-.left-top .box-icon-right .icon {
+.left-top .box-icon-left-app .icon, .box-icon-right-app .icon {
     margin: 0 10px;
 }
+
+/* left side - SEARCH */
 
 .left-search-box {
     display: flex;
@@ -103,7 +104,6 @@ body {
 }
 .left-search-box .input-box i {
     padding-right: 10px;
-
 }
 
 .search-input {
@@ -112,9 +112,43 @@ body {
     width: 68%;
 }
 
-.left-user-box {
+/* left side - USER */
+
+.left-user-box .user-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+    height: 75px;
     /*debug*/
     /*background-color: green;*/
+}
+
+.left-user-box .user-box .img-box {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.left-user-box .user-box .img-box img {
+    width: 50px;
+    margin-top: 10px;
+}
+
+.left-user-box .user-box .text-box {
+    margin: 0 20px;
+    flex-grow: 1;
+}
+
+.left-user-box .user-box .text-box p:first-child {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+.left-user-box .user-box .text-box p:last-child {
+    font-size: 12px;
+    color: #898989;
 }
 
 
@@ -126,16 +160,52 @@ body {
     height: 100%;
     background-image: url("../img/bg-boolzapp-1.jpg");
     background-repeat: repeat;
-    background-size: 300px;
+    background-size: 400px;
     /*debug*/
     /*background-color: red;*/
 }
 
-.right-top {
+.right-container .right-top {
+    background-color: #ededed;
+    display: flex;
+    justify-content: space-between;
+    height: 77px;
     /*debug*/
    /* background-color: red;*/
-
 }
+
+.right-container .right-top .user-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container .right-top .user-box .img-box {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.right-container .right-top .user-box .img-box img {
+    width: 50px;
+    margin-top: 10px;
+}
+
+.right-container .right-top .user-box .text-box {
+    margin-left: 20px;
+}
+
+.right-container .right-top .user-box .text-box p:first-child {
+    font-size: 16px;
+    color: #000;
+}
+
+.right-container .right-top .user-box .text-box p:last-child {
+    font-size: 12px;
+    color: gray;
+}
+
+
 
 .right-chat-area {
     /*debug*/

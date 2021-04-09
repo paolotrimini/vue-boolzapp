@@ -4,7 +4,7 @@ function initVue() {
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: 'user1.png',
                 visible: true,
                 messages: [
                     {
@@ -26,7 +26,7 @@ function initVue() {
             },
             {
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: 'user2.png',
                 visible: true,
                 messages: [
                     {
@@ -48,7 +48,7 @@ function initVue() {
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: 'user3.png',
                 visible: true,
                 messages: [
                     {
@@ -70,7 +70,7 @@ function initVue() {
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: 'user4.png',
                 visible: true,
                 messages: [
                     {
