@@ -44,7 +44,7 @@ body {
 .left-top .box-img img {
     width: 40px;
     margin: 15px 20px;
-    cursor: pointer;
+    border-radius: 50%;
 }
 
 .left-top .box-icon-left {
