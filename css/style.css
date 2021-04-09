@@ -81,8 +81,31 @@ body {
 }
 
 .left-search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: #f8f8f8;
+    padding: 25px;
     /*debug*/
     /*background-color: deepskyblue;*/
+}
+
+.left-search-box .input-box {
+    background: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 100%;
+    text-align: left;
+    font-size: 10px;
+    /*debug*/
+    /*background-color: deepskyblue;*/
+}
+
+.search-input {
+    border: none;
+    text-align: center;
+    width: 68%;
 }
 
 .left-user-box {
