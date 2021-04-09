@@ -11,6 +11,7 @@
     margin: auto;
     background-color: white;
 }
+
     /* LEFT SIDE */
 
 body {
@@ -46,13 +47,36 @@ body {
     cursor: pointer;
 }
 
-.left-top .box-icon {
+.left-top .box-icon-left {
     display: flex;
     align-items: center;
-    margin-right: 25px;
+    margin-left: 15px;
 }
 
-.left-top .box-icon .icon {
+.left-top .box-icon-left .icon {
+    margin: 0 4px;
+    font-size: 12px;
+}
+
+.left-top .box-icon-left .icon:first-child {
+    color: lightcoral;
+}
+
+.left-top .box-icon-left .icon:nth-child(2) {
+    color: goldenrod;
+}
+.left-top .box-icon-left .icon:last-child {
+    color: limegreen;
+}
+
+.left-top .box-icon-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+.left-top .box-icon-right .icon {
     margin: 0 10px;
 }
 
