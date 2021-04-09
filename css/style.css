@@ -31,7 +31,11 @@ body {
 .left-top {
     /*debug*/
     background-color: hotpink;
+}
 
+.search-box {
+    /*debug*/
+    background-color: deepskyblue;
 }
 
 
