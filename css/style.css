@@ -25,7 +25,7 @@ body {
 
 .left-container {
     width: 25%;
-    min-width: 350px;
+    min-width: 300px;
     height: 100%;
     border-right: 1px solid darkgrey;
     /*debug*/
@@ -33,8 +33,27 @@ body {
 }
 
 .left-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ededed;
     /*debug*/
     /*background-color: hotpink;*/
+}
+
+.left-top .box-img img {
+    width: 40px;
+    margin: 15px 20px;
+    cursor: pointer;
+}
+
+.left-top .box-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.left-top .box-icon .icon {
+    margin: 0 10px;
 }
 
 .left-search-box {
