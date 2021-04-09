@@ -46,3 +46,21 @@ body {
 
 
 /* RIGHT SIDE */
+
+.right-top {
+    /*debug*/
+    background-color: red;
+
+}
+
+.right-chat-area {
+    /*debug*/
+    background-color: blueviolet;
+
+}
+
+.right-message-box {
+    /*debug*/
+    background-color: cornflowerblue;
+
+}
