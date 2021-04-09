@@ -11,9 +11,28 @@
     margin: auto;
     background-color: white;
 }
-
+    /* LEFT SIDE */
 
 body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-size: 16px;
     /*debug*/
     background-color: orange;
 }
+
+.left-container {
+    /*debug*/
+    background-color: greenyellow;
+}
+
+.left-top {
+    /*debug*/
+    background-color: hotpink;
+
+}
+
+
+/* RIGHT SIDE */
