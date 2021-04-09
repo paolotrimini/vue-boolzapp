@@ -206,15 +206,32 @@ body {
 }
 
 
-
-.right-chat-area {
+.right-container .right-chat-area {
+    height: calc(100% - 70px - 70px);
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
     /*debug*/
     /*background-color: blueviolet;*/
 
 }
 
-.right-message-box {
+.right-container .right-message-box {
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     /*debug*/
     /*background-color: cornflowerblue;*/
+}
 
+.main-container-right .right-input-message .chat-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
