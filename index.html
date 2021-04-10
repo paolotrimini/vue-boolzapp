@@ -52,16 +52,16 @@
 
             <!-- user list -->
             <div class="left-user-box">
-               <div class="user-box" >
+               <div v-for="user in contacts" class="user-box" >
                    <div class="img-box">
                        <img src="img/user1.png" alt="User1">
                    </div>
                    <div class="text-box">
-                       <p>testo 1</p>
+                       <p>{{ user.name }}</p>
                        <p>testo 2</p>
                    </div>
                    <div class="data-box">
-
+                        <p>text</p>
                    </div>
                </div>
             </div>

@@ -1,6 +1,9 @@
 function initVue() {
     new Vue({
         el: '#app',
+
+        data: {
+
         contacts: [
             {
                 name: 'Michele',
@@ -86,7 +89,7 @@ function initVue() {
                 ],
             },
         ]   // fine contacts
-
+        },
     });
 } // fine initVue
 
