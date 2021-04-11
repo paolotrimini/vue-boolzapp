@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font -->
+    <!-- Font family-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome-->
@@ -13,7 +13,9 @@
     <!-- VueJS -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- Bootstrap (CSS) -->
+<!--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+-->
     <title>boolzapp</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" charset="utf-8"></script>
@@ -46,22 +48,25 @@
             <div class="left-search-box">
                 <div class="input-box">
                     <i class="fas fa-search"></i>
-                    <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat" class="left-input">
+                    <input v-model="findUser" type="text" placeholder="Cerca o inizia una nuova chat" class="search-input">
                 </div>
             </div>
 
             <!-- user list -->
             <div class="left-user-box">
-               <div v-for="user in contacts" class="user-box" >
+                <!-- ciclo gli user per visualizzarli tutti / al click ho index corrente /
+               filtro ricerca in base ai caratteri digitati / do proprietà a user selezionato /-->
+               <div class="user-box" v-for="(user, index) in contacts" @click="corrIndex(index)"
+                    v-if="user.name.includes(findUser)" :class="(index === userIndex) ? 'selected' : '' ">
                    <div class="img-box">
-                       <img src="img/user1.png" alt="User1">
+                       <img :src="'img/' + user.avatar">
                    </div>
                    <div class="text-box">
-                       <p>{{ user.name }}</p>
-                       <p>testo 2</p>
+                       <p>{{user.name}}</p>
+                       <p>mex...</p>
                    </div>
                    <div class="data-box">
-                        <p>text</p>
+                        <p>date...</p>
                    </div>
                </div>
             </div>
@@ -76,38 +81,42 @@
             <div class="right-top">
                 <div class="user-box" >
                     <div class="img-box">
-                        <img src="img/user1.png" alt="User1">
+                        <img :src="'img/' + contacts[userIndex].avatar" alt="">
                     </div>
                     <div class="text-box">
-                        <p>testo 1</p>
-                        <p>testo 2</p>
+                        <p>{{contacts[userIndex].name}}</p>
+                        <p>orario live</p>
                     </div>
                 </div>
                 <div class="box-icon-right-app">
                     <div class="icon"><i class="fas fa-search"></i></div>
                     <div class="icon"><i class="fas fa-chevron-down"></i></i></div>
                 </div>
-
-
             </div>
 
             <!-- chat area -->
+
             <div id="chat" class="right-chat-area">
-                <div class="chat-box">
-                    <div>...</div>
-                    <p>...</p>
+                <!-- ciclo i rispettivi messaggi -->
+                <div class="chat-box"  v-for="elem in contacts[userIndex].messages">
+                    <!-- cronologia mex conversazione -->
+                    <div :class="(elem.status === 'sent') ? 'myMsg' : 'userMsg' " >
+                        <!-- text e date -->
+                        <p>{{ elem.text }}<span>{{ elem.date }}</span></p>
+                    </div>
                 </div>
             </div>
 
             <!-- message box -->
+
             <div class="right-message-box">
-                <div class="chat-box">
+                <div class="input-box">
                     <i class="far fa-smile"></i>
                     <i class="fas fa-paperclip"></i>
-                    <input class="search-input" type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" class="search-input"
+                    @keyup.enter="insertMsg(userIndex)" v-model="answer">
                     <i class="fas fa-microphone"></i>
                 </div>
-
             </div>
 
         </div>

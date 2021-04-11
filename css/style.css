@@ -17,12 +17,16 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
-    font-size: 16px;
     /*debug*/
     /*background-color: orange;*/
 }
 
 /* LEFT SIDE */
+
+.selected {
+    background-color: #ebebeb;
+    transition: all 300ms;
+}
 
 .left-container {
     width: 25%;
@@ -35,7 +39,7 @@ body {
 
 .left-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #ededed;
     /*debug*/
     /*background-color: hotpink;*/
@@ -86,9 +90,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    height: 45px;
     background-color: #f6f6f6;
-    padding: 25px;
+    padding: 18px;
     /*debug*/
     /*background-color: deepskyblue;*/
 }
@@ -96,21 +100,21 @@ body {
 .left-search-box .input-box {
     background-color: white;
     border-radius: 25px;
-    padding: 5px 15px;
+    padding: 8px 10px;
     width: 100%;
     text-align: left;
     font-size: 10px;
     /*debug*/
     /*background-color: deepskyblue;*/
 }
+
 .left-search-box .input-box i {
     padding-right: 10px;
 }
 
 .search-input {
     border: none;
-    text-align: center;
-    width: 68%;
+    width: 75%;
 }
 
 /* left side - USER */
@@ -119,8 +123,9 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #f6f6f6;
     height: 75px;
+    cursor: pointer;
     /*debug*/
     /*background-color: green;*/
 }
@@ -134,6 +139,7 @@ body {
 .left-user-box .user-box .img-box img {
     width: 50px;
     margin-top: 10px;
+    border-radius: 50%;
 }
 
 .left-user-box .user-box .text-box {
@@ -143,14 +149,30 @@ body {
 
 .left-user-box .user-box .text-box p:first-child {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
     color: black;
+    padding-bottom: 5px;
 }
 
 .left-user-box .user-box .text-box p:last-child {
     font-size: 12px;
     color: #898989;
+    font-weight: 300;
 }
+
+.left-user-box .user-box .data-box {
+    width: 65px;
+    margin-right: 10px;
+}
+
+.left-user-box .user-box .data-box p, .text-box p{
+    font-size: 12px;
+    font-weight: 300;
+    color: #898989;
+}
+
+
+
 
 
 /* RIGHT SIDE */
@@ -190,6 +212,7 @@ body {
 .right-container .right-top .user-box .img-box img {
     width: 50px;
     margin-top: 10px;
+    border-radius: 50%;
 }
 
 .right-container .right-top .user-box .text-box {
@@ -206,6 +229,7 @@ body {
     color: gray;
 }
 
+/* CHAT AREA */
 
 .right-container .right-chat-area {
     height: calc(100% - 70px - 70px);
@@ -217,28 +241,82 @@ body {
 
 }
 
+.right-container .right-chat-area .chat-box {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.right-container .right-chat-area .chat-box .userMsg {
+    display: flex;
+    align-self: flex-start;
+    width: 60%;
+}
+
+.right-container .right-chat-area .chat-box .userMsg p{
+    position: relative;
+    min-width: 100px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: #303334;
+    background-color: white;
+}
+
+.right-container .right-chat-area .chat-box .myMsg {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    width: 50%;
+}
+
+.right-container .right-chat-area .chat-box .myMsg p {
+    position: relative;
+    min-width: 100px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: #303334;
+    background-color: #ddf7c8;
+}
+
+.right-container .right-chat-area .chat-box span {
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+    font-size: 10px;
+    font-weight: 300;
+    color: #898989;
+}
+
+/* INPUT MESSAGE */
+
 .right-container .right-message-box {
-    height: 77px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ededed;
     position: absolute;
+    height: 65px;
     width: 100%;
-    bottom: 0;
     /*debug*/
     /*background-color: cornflowerblue;*/
 }
 
-.right-container .right-message-box .chat-box {
+
+.right-container .right-message-box .input-box {
     width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.right-container .right-message-box .chat-box .search-input {
-    background: #fff;
+.right-container .right-message-box .input-box .search-input {
+    background-color: white;
     border-radius: 20px;
     border: none;
     padding:10px;
@@ -246,8 +324,9 @@ body {
     flex-grow: 1;
 }
 
-.right-container .right-message-box .chat-box i {
+.right-container .right-message-box .input-box i {
     font-size: 20px;
     color: #50585d;
     margin: 0 15px;
+    cursor: pointer;
 }
