@@ -23,7 +23,7 @@ body {
 
 /* LEFT SIDE */
 
-.selected {
+.active {
     background-color: #ebebeb;
     transition: all 300ms;
 }

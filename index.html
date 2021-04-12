@@ -57,7 +57,7 @@
                 <!-- ciclo gli user per visualizzarli tutti / al click ho index corrente /
                filtro ricerca in base ai caratteri digitati / do proprietà a user selezionato /-->
                <div class="user-box" v-for="(user, index) in contacts" @click="corrIndex(index)"
-                    v-if="user.name.includes(findUser)" :class="(index === userIndex) ? 'selected' : '' ">
+                    v-if="user.name.includes(findUser)" :class="(index === userIndex) ? 'active' : '' ">
                    <div class="img-box">
                        <img :src="'img/' + user.avatar" alt="">
                    </div>

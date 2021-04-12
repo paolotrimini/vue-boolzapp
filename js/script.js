@@ -97,11 +97,11 @@ function initVue() {
 
         methods: {
 
-            corrIndex(index) {      // indice corrente
+            corrIndex: function(index) {      // indice corrente
                 this.userIndex = index;
             },
 
-            insertMsg(userIndex){
+            insertMsg: function(userIndex){
                 let myMsg = {
                     text: this.answer,  // ciò che digito in input
                     status: 'sent'
