@@ -172,9 +172,6 @@ body {
 }
 
 
-
-
-
 /* RIGHT SIDE */
 
 .right-container {
@@ -291,6 +288,11 @@ body {
     font-size: 10px;
     font-weight: 300;
     color: #898989;
+}
+
+.right-container .right-chat-area .chat-box i {
+    position: absolute;
+    right: 10px;
 }
 
 /* INPUT MESSAGE */

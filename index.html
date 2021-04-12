@@ -59,7 +59,7 @@
                <div class="user-box" v-for="(user, index) in contacts" @click="corrIndex(index)"
                     v-if="user.name.includes(findUser)" :class="(index === userIndex) ? 'selected' : '' ">
                    <div class="img-box">
-                       <img :src="'img/' + user.avatar">
+                       <img :src="'img/' + user.avatar" alt="">
                    </div>
                    <div class="text-box">
                        <p>{{user.name}}</p>
@@ -98,11 +98,11 @@
 
             <div id="chat" class="right-chat-area">
                 <!-- ciclo i rispettivi messaggi -->
-                <div class="chat-box"  v-for="elem in contacts[userIndex].messages">
+                <div class="chat-box" v-for="elem in contacts[userIndex].messages">
                     <!-- cronologia mex conversazione -->
                     <div :class="(elem.status === 'sent') ? 'myMsg' : 'userMsg' " >
                         <!-- text e date -->
-                        <p>{{ elem.text }}<span>{{ elem.date }}</span></p>
+                        <p>{{ elem.text }}<span>{{ elem.date }}</span><i class="fa fa-chevron-down"></i></p>
                     </div>
                 </div>
             </div>
