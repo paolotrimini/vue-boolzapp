@@ -4,8 +4,8 @@ function initVue() {
 
         data: {
 
-            userIndex: 1,    // chat selezionata al caricamento
-            findUser: '',    // filtro lista user
+            contactIndex: 1,    // chat selezionata al caricamento
+            findContact: '',    // filtro lista user
             answer: '',      // valore iniziale input della chat
 
             contacts: [
@@ -98,38 +98,38 @@ function initVue() {
         methods: {
 
             corrIndex: function(index) {      // indice corrente
-                this.userIndex = index;
+                this.contactIndex = index;
             },
 
-            insertMsg: function(userIndex){
+            insertMsg: function(contactIndex){
                 let myMsg = {
-                    date: this.currTime(),
+                    date: this.corrTime(),
                     text: this.answer,  // ciò che digito in input
                     status: 'sent'
                 }
-                this.contacts[userIndex].messages.push(myMsg);
+                this.contacts[contactIndex].messages.push(myMsg);
 
                 // RISPOSTA UTENTE (dopo 2 secondi)
 
                 setTimeout (function(){
 
-                    let userResp= {
-                        date: app.currTime(),
+                    let contactResp= {
+                        date: app.corrTime(),
                         text: 'ok',
                         status: 'received'
                     }
-                    app.contacts[userIndex].messages.push(userResp);
+                    app.contacts[contactIndex].messages.push(contactResp);
                 }, 1000);
 
                 this.answer = '';   // ripulisco campo input dopo invio msg
             },
 
-            currTime: function(){
+            corrTime: function(){
                 let data = new Date();
-                let currData = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' ' +
+                let corrData = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' ' +
                     data.getHours() + ': ' + data.getMinutes() + ': ' + data.getSeconds();
 
-                return currData;
+                return corrData;
             },
         }
     });

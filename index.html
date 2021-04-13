@@ -48,7 +48,7 @@
             <div class="left-search-box">
                 <div class="input-box">
                     <i class="fas fa-search"></i>
-                    <input v-model="findUser" type="text" placeholder="Cerca o inizia una nuova chat" class="search-input">
+                    <input v-model="findContact" type="text" placeholder="Cerca o inizia una nuova chat" class="search-input">
                 </div>
             </div>
 
@@ -56,20 +56,20 @@
             <div class="left-user-box">
                 <!-- ciclo gli user per visualizzarli tutti / al click ho index corrente /
                filtro ricerca in base ai caratteri digitati / do proprietà a user selezionato /-->
-               <div class="user-box" v-for="(user, index) in contacts"
+               <div class="user-box" v-for="(contact, index) in contacts"
                     @click="corrIndex(index)"
-                    v-if="user.name.toLowerCase().includes(findUser)"
-                    :class="(index === userIndex) ? 'active' : '' ">
+                    v-if="contact.name.toLowerCase().includes(findContact)"
+                    :class="(index === contactIndex) ? 'active' : '' ">
 
                    <div class="img-box">
-                       <img :src="'img/' + user.avatar" alt="">
+                       <img :src="'img/' + contact.avatar" alt="">
                    </div>
                    <div class="text-box">
-                       <p>{{user.name}}</p>
-                       <p>mex...</p>
+                       <p>{{contact.name}}</p>
+                       <p>Messaggio</p>
                    </div>
                    <div class="data-box">
-                        <p>date...</p>
+                        <p>orario</p>
                    </div>
                </div>
             </div>
@@ -84,11 +84,11 @@
             <div class="right-top">
                 <div class="user-box" >
                     <div class="img-box">
-                        <img :src="'img/' + contacts[userIndex].avatar" alt="">
+                        <img :src="'img/' + contacts[contactIndex].avatar" alt="">
                     </div>
                     <div class="text-box">
-                        <p>{{contacts[userIndex].name}}</p>
-                        <p>orario live</p>
+                        <p>{{contacts[contactIndex].name}}</p>
+                        <p>clicca qui per info contatto</p>
                     </div>
                 </div>
                 <div class="box-icon-right-app">
@@ -101,7 +101,7 @@
 
             <div id="chat" class="right-chat-area">
                 <!-- ciclo i rispettivi messaggi -->
-                <div class="chat-box" v-for="elem in contacts[userIndex].messages">
+                <div class="chat-box" v-for="elem in contacts[contactIndex].messages">
                     <!-- cronologia mex conversazione -->
                     <div :class="(elem.status === 'sent') ? 'myMsg' : 'userMsg' " >
                         <!-- text e date -->
@@ -117,7 +117,7 @@
                     <i class="far fa-smile"></i>
                     <i class="fas fa-paperclip"></i>
                     <input type="text" placeholder="Scrivi un messaggio" class="search-input"
-                    @keyup.enter="insertMsg(userIndex)" v-model="answer">
+                    @keyup.enter="insertMsg(contactIndex)" v-model="answer">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
