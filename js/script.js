@@ -103,6 +103,7 @@ function initVue() {
 
             insertMsg: function(userIndex){
                 let myMsg = {
+                    date: this.currTime(),
                     text: this.answer,  // ciò che digito in input
                     status: 'sent'
                 }
@@ -113,13 +114,22 @@ function initVue() {
                 setTimeout (function(){
 
                     let userResp= {
+                        date: app.currTime(),
                         text: 'ok',
                         status: 'received'
                     }
                     app.contacts[userIndex].messages.push(userResp);
-                }, 2000);
+                }, 1000);
 
                 this.answer = '';   // ripulisco campo input dopo invio msg
+            },
+
+            currTime: function(){
+                let data = new Date();
+                let currData = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' ' +
+                    data.getHours() + ': ' + data.getMinutes() + ': ' + data.getSeconds();
+
+                return currData;
             },
         }
     });
