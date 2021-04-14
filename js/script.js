@@ -95,6 +95,13 @@ function initVue() {
             ]   // fine contacts
         },
 
+        // AUTOSCROLL
+
+        updated() {
+            var container = this.$el.querySelector("#chat");
+            container.scrollTop = container.scrollHeight;
+        },
+
         methods: {
 
             corrIndex: function(index) {      // indice corrente
@@ -109,7 +116,7 @@ function initVue() {
                 }
                 this.contacts[contactIndex].messages.push(myMsg);
 
-                // RISPOSTA UTENTE (dopo 2 secondi)
+                // RISPOSTA UTENTE (dopo 1 secondo)
 
                 setTimeout (function(){
 
@@ -119,6 +126,7 @@ function initVue() {
                         status: 'received'
                     }
                     app.contacts[contactIndex].messages.push(contactResp);
+
                 }, 1000);
 
                 this.answer = '';   // ripulisco campo input dopo invio msg
@@ -131,6 +139,7 @@ function initVue() {
 
                 return corrData;
             },
+
         }
     });
 } // fine initVue
