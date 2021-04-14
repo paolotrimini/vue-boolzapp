@@ -52,7 +52,8 @@
                 </div>
             </div>
 
-            <!-- user list -->
+            <!-- contact list -->
+
             <div class="left-user-box">
                 <!-- ciclo gli user per visualizzarli tutti / al click ho index corrente /
                filtro ricerca in base ai caratteri digitati / do proprietà a user selezionato /-->
@@ -73,14 +74,13 @@
                    </div>
                </div>
             </div>
-
         </div>
         <!-- FINE LEFT -->
 
 
         <!-- INIZIO RIGHT -->
         <div class="right-container">
-            <!-- img user + options (right side) -->
+            <!-- img contact + options (right side) -->
             <div class="right-top">
                 <div class="user-box" >
                     <div class="img-box">
@@ -116,8 +116,8 @@
                 <div class="input-box">
                     <i class="far fa-smile"></i>
                     <i class="fas fa-paperclip"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" class="search-input"
-                    @keyup.enter="insertMsg(contactIndex)" v-model="answer">
+                    <input type="text" v-model="answer" placeholder="Scrivi un messaggio" class="search-input"
+                    @keyup.enter="insertMsg(contactIndex)">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>

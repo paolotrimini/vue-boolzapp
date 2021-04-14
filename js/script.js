@@ -108,6 +108,7 @@ function initVue() {
                 this.contactIndex = index;
             },
 
+            // MIO MESSAGGIO
             insertMsg: function(contactIndex){
                 let myMsg = {
                     date: this.corrTime(),
@@ -117,7 +118,6 @@ function initVue() {
                 this.contacts[contactIndex].messages.push(myMsg);
 
                 // RISPOSTA UTENTE (dopo 1 secondo)
-
                 setTimeout (function(){
 
                     let contactResp= {
@@ -131,6 +131,7 @@ function initVue() {
                 this.answer = '';   // ripulisco campo input dopo invio msg
             },
 
+            // ORARIO CORRENTE
             corrTime: function(){
                 let data = new Date();
                 let corrData = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' ' +
