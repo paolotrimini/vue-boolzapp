@@ -98,8 +98,8 @@ function initVue() {
         // AUTOSCROLL
 
         updated() {
-            var container = this.$el.querySelector("#chat");
-            container.scrollTop = container.scrollHeight;
+            var chatArea = this.$el.querySelector("#chat");
+            chatArea.scrollTop = chatArea.scrollHeight;
         },
 
         methods: {
@@ -113,7 +113,7 @@ function initVue() {
                 let myMsg = {
                     date: this.corrTime(),
                     text: this.answer,  // ciò che digito in input
-                    status: 'sent'
+                    status: 'sent'      // per il css
                 }
                 this.contacts[contactIndex].messages.push(myMsg);
 
