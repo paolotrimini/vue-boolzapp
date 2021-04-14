@@ -126,7 +126,6 @@ function initVue() {
                         status: 'received'
                     }
                     app.contacts[contactIndex].messages.push(contactResp);
-
                 }, 1000);
 
                 this.answer = '';   // ripulisco campo input dopo invio msg
