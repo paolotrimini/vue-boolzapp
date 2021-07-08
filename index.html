@@ -14,20 +14,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- Bootstrap (CSS) -->
 <!--
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 -->
-    <title>boolzapp</title>
+
+    <title>Boolzapp</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" charset="utf-8"></script>
 </head>
 <body>
     <div id="app">
-
-        <!-- INIZIO LEFT -->
-
+        <!-- LEFT SIDE -->
         <div class="left-container">
-
-            <!-- img user + options (left side) -->
             <div class="left-top">
                 <div class="box-icon-left-mac">
                     <div class="icon"><i class="fas fa-times-circle"></i></div>
@@ -43,7 +40,16 @@
                     <div class="icon"><i class="fas fa-chevron-down"></i></i></div>
                 </div>
             </div>
-
+            <!-- disclaimer -->
+            <div class="left-disclaimer">
+                <div class="left-disclaimer-logo">
+                    <i class="fa fa-bell-slash" aria-hidden="true"></i>
+                </div>
+                <div class="left-disclaimer-text">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
             <!-- search box -->
             <div class="left-search-box">
                 <div class="input-box">
@@ -51,36 +57,27 @@
                     <input v-model="findContact" type="text" placeholder="Cerca o inizia una nuova chat" class="search-input">
                 </div>
             </div>
-
             <!-- contact list -->
-
             <div class="left-user-box">
-                <!-- ciclo gli user per visualizzarli tutti / al click ho index corrente /
-               filtro ricerca in base ai caratteri digitati / do proprietà a user selezionato /-->
                <div class="user-box" v-for="(contact, index) in contacts"
                     @click="corrIndex(index)"
                     v-if="contact.name.toLowerCase().includes(findContact)"
                     :class="(index === contactIndex) ? 'active' : '' ">
-
                    <div class="img-box">
                        <img :src="'img/' + contact.avatar" alt="">
                    </div>
                    <div class="text-box">
                        <p>{{contact.name}}</p>
-                       <p>Messaggio</p>
+                       <p>{{contact.messages[contact.messages.length-1].text}}</p>
                    </div>
                    <div class="data-box">
-                        <p>orario</p>
+                       <p>{{contact.messages[contact.messages.length-2].date}}</p>
                    </div>
                </div>
             </div>
         </div>
-        <!-- FINE LEFT -->
-
-
-        <!-- INIZIO RIGHT -->
+        <!-- RIGHT SIDE -->
         <div class="right-container">
-            <!-- img contact + options (right side) -->
             <div class="right-top">
                 <div class="user-box" >
                     <div class="img-box">
@@ -96,22 +93,17 @@
                     <div class="icon"><i class="fas fa-chevron-down"></i></i></div>
                 </div>
             </div>
-
             <!-- chat area -->
-
             <div id="chat" class="right-chat-area">
-                <!-- ciclo i rispettivi messaggi -->
                 <div class="chat-box" v-for="elem in contacts[contactIndex].messages">
-                    <!-- cronologia mex conversazione -->
+                    <!-- mex conversation chronology -->
                     <div :class="(elem.status === 'sent') ? 'myMsg' : 'userMsg' " >
-                        <!-- text e date -->
+                        <!-- text and date -->
                         <p>{{ elem.text }}<span>{{ elem.date }}</span><i class="fa fa-chevron-down"></i></p>
                     </div>
                 </div>
             </div>
-
-            <!-- message box -->
-
+            <!-- box message -->
             <div class="right-message-box">
                 <div class="input-box">
                     <i class="far fa-smile"></i>
@@ -121,11 +113,8 @@
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
-
         </div>
-        <!-- FINE RIGHT -->
     </div>
-
 
 </body>
 </html>

@@ -84,6 +84,33 @@ body {
     color: #50585d;
 }
 
+/* left disclaimer */
+
+.left-disclaimer {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 30px;
+    background-color: #9ddefe;
+    font-size: 12px;
+}
+
+.left-disclaimer i {
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: white;
+    color: #9ddefe;
+    text-decoration: none;
+}
+
+.left-disclaimer-text a {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+
+}
+
 /* left side - SEARCH */
 
 .left-search-box {
@@ -243,6 +270,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: 40px;
+}
+
+.right-container .right-chat-area .chat-box i {
+    color: lightgrey;
 }
 
 .right-container .right-chat-area .chat-box .userMsg {
